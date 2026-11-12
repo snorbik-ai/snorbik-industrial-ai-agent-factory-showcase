@@ -1,0 +1,16 @@
+# SNORBIK Industrial AI Agent Factory — Full Public Technical Summary
+
+## 1. Purpose
+SNORBIK Industrial AI Agent Factory provides a standardized, auditable pipeline to build, validate, and ship vertical AI agents and MCP servers without brittle hardcoded logic or unguarded LLM actions.
+
+## 2. Clean Architecture & Governance
+- **Core Contracts & Ports:** Vendor-agnostic interfaces (`HotelProviderInterface`, `GeoProviderInterface`, `CTR-COMMON-OFFER-V2`) isolating domain rules from external PMS/API adapters.
+- **Policy Decision Points (PDP):** High-impact mutations (such as `create_booking`) enforce `PDP = ASK` requiring explicit human approval and a time-bounded `confirm_token` issued by `revalidate_offer`, plus SHA-256 `idempotency_key` deduplication.
+- **Modular Context Routing:** Intent-driven routing (`CTX_BOOKING`, `CTX_GEO`, `CTX_TRAVEL`, `CTX_CORE`) minimizes prompt bloat and keeps tool selection deterministic.
+
+## 3. ACP + MCP Interoperability
+- **ACP Bridge:** Connects local Agent Client Protocol runtimes (Google Antigravity Gemini ACP, Claude Code ACP, Ollama, BYOK Gateway) with automatic `mcpServers` injection.
+- **MCP #23 (`23-hotel-concierge-agent-mcp`):** Exposes 11 tools over JSON-RPC stdio following the INV-07 Bipartite Pipeline Doctrine (intent + exact ordered tool sequences).
+
+## 4. Public Scope Notice
+This repository is a public showcase containing architecture documentation, `llms.txt` metadata, and verified UI screenshots. Proprietary factory source code, internal credentials, and private runtime configurations are stored exclusively in the private SNORBIK AI repository.

@@ -1,0 +1,17 @@
+# SNORBIK Industrial AI Agent Factory Showcase
+
+> Industrial platform for manufacturing secure, reusable AI agents with Clean Architecture, MCP (Model Context Protocol), ACP (Agent Client Protocol), and deterministic PDP governance.
+
+## Key Capabilities
+- Multi-stage AI Agent Factory: Discover, Reuse, Adapt, Assemble, Validate, Package.
+- Hotel Concierge & Booking Agent V2 (`CTR-COMMON-OFFER-V2`, `PDP = ASK`, idempotent `BookingReceipt`).
+- Geo Discovery & Travel Intelligence (`search_nearby_places`, `calculate_distance_and_route`, `build_itinerary`).
+- Workstation V2 3-Column Cockpit: ACP/MCP discovery, Gemini ACP real-time tool execution, structured Workspace rendering, and session JSON artifact explorer.
+- INV-07 Bipartite Pipeline Doctrine for MCP tool descriptions.
+
+## Documentation
+- [README.md](README.md): Architecture overview and verified UI screenshots.
+- [llms-full.txt](llms-full.txt): Detailed technical summary for AI agents.
+
+## Publisher
+- SNORBIK AI — https://snorbik.com
